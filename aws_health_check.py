@@ -3,10 +3,13 @@ from urllib.request import urlopen
 from urllib.error import URLError, HTTPError
 import xml.etree.ElementTree as ET
 import socket
- 
+
 # This script iterates through a subset of AWS services in the public 
 # GovCloud Health Status dashboard. The script returns status based on 
 # RSS feed response, then formats as a metric data point for Splunk ingest
+#
+# NO AUTH REQUIRED - PULLS FROM AWS STATUS PAGE
+# 
  
 RSS_BASE = "https://status.amazonaws-us-gov.com/rss/{slug}.rss"
 TIMEOUT = 10
